@@ -12,7 +12,7 @@ const baseURL = "http://localhost:3000";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-    testDir: "./tests",
+    testDir: "./playwright/tests",
     /* Maximum time one test can run for. */
     timeout: 30 * 1000,
     expect: {
