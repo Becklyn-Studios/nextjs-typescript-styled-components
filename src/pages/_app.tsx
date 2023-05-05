@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { theme } from "@css/theme";
 import { GlobalStyle } from "@css/GlobalStyle";
+import "@css/typography/font/stylesheet.css";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     return (
