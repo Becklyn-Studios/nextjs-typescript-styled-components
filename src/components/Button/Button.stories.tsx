@@ -9,7 +9,7 @@ export default {
         layout: "centered",
     },
     argTypes: {
-        as: { table: { disable: true } },
+        element: { table: { disable: true } },
         variant: { table: { disable: true } },
         href: { table: { disable: true } },
         shallow: { table: { disable: true } },

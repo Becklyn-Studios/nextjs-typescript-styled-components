@@ -44,13 +44,13 @@ type Variant = "primary" | "secondary";
 interface HTMLAnchorProps
     extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">,
         Pick<LinkProps, "href" | "shallow"> {
-    as: "a";
+    element: "a";
     variant?: Variant;
     disabled?: boolean;
 }
 
 interface HTMLButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    as?: "button";
+    element?: "button";
     variant?: Variant;
 }
 
@@ -61,9 +61,9 @@ export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
     children,
     ...props
 }) => {
-    switch (props.as) {
+    switch (props.element) {
         case "a": {
-            const { as, href, shallow, ...rest } = props;
+            const { element, href, shallow, ...rest } = props;
             return (
                 <Link href={href} shallow={shallow} passHref legacyBehavior>
                     <ButtonWrapper as="a" {...rest} $variant={variant}>
@@ -73,7 +73,7 @@ export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
             );
         }
         default: {
-            const { as, ...rest } = props;
+            const { element, ...rest } = props;
             return (
                 <ButtonWrapper {...rest} $variant={variant}>
                     {children}
